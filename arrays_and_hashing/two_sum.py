@@ -1,3 +1,5 @@
+# this problem can be solved using hashmap
+
 class Solution(object):
     def twoSum(self, nums, target):
         """

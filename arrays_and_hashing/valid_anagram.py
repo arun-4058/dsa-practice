@@ -1,3 +1,6 @@
+# this problem can be solved using sorting and hashmaps
+# idea is to check for the freq of each character and compare
+
 class Solution(object):
 
     # sol 1:
