@@ -8,6 +8,22 @@ class TreeNode:
         self.left = left
 
 
+def isSameTree(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+    if not p and not q:
+        return True
+    if (p and not q) or (not p and q):
+        return False
+    return p.val == q.val and isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
+
+
+def maxDepth(root: Optional[TreeNode]) -> int:
+    if not root:
+        return 0
+    left_depth = maxDepth(root.left)
+    right_depth = maxDepth(root.right)
+    return 1 + max(left_depth, right_depth)
+
+
 def level_traversal(root: Optional[TreeNode]) -> None:
     if not root:
         return None
