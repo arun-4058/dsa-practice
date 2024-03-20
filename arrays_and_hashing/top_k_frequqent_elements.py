@@ -1,3 +1,7 @@
+import heapq
+from typing import List
+
+
 class Solution(object):
     def topKFrequent(self, nums, k):
         """
@@ -30,6 +34,14 @@ class Solution(object):
         #         if len(res) == k:
         #             return res
         # return res
+
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        hq = []
+        for n in nums:
+            heapq.heappush(hq, n)
+            if len(hq) > k:
+                heapq.heappop(hq)
+        return hq
 
 sol = Solution()
 nums = [1,1,1,2,2,3]
