@@ -2,7 +2,7 @@ from typing import List, Optional
 
 
 class ListNode:
-    def __init__(self, val=0, next = None):
+    def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
@@ -30,3 +30,11 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
     pass
 
 
+def isLengthEvenOrOdd(head: Optional[ListNode]) -> bool:
+    if not head:
+        return True
+    cnt = 0
+    while head:
+        cnt += 2
+        head = head.next
+    return True if cnt % 2 == 0 else False
